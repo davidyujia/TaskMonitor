@@ -1,0 +1,16 @@
+syntax = "proto3";
+package taskmonitorservice;
+
+option csharp_namespace = "Grpc.TaskMonitor";
+
+service MonitorService {
+	rpc SendProcessStart (MonitorRequest) returns (MonitorModel);
+	rpc SendProcessEnd (MonitorRequest) returns (MonitorModel);
+}
+
+message MonitorRequest {
+	int32 id = 1;
+}
+
+message MonitorModel {
+}
